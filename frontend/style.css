@@ -1,0 +1,171 @@
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f2f6f3;
+  margin: 0;
+  color: #1f2d23;
+}
+header {
+  background: #1b6b3c;
+  color: white;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { flex-shrink: 0; }
+header h1 { margin: 0; font-size: 22px; }
+header h1 span { font-size: 13px; font-weight: normal; display: block; opacity: 0.85; }
+#topNav { display: flex; gap: 8px; }
+.navlink {
+  background: transparent; border: 1px solid #ffffff55; color: white;
+  padding: 8px 14px; border-radius: 20px; cursor: pointer; font-size: 13px;
+}
+.navlink.primary { background: #ffb703; color: #1b2d1c; border: none; font-weight: bold; }
+.navlink.hidden { display: none; }
+#userBar { font-size: 14px; }
+#userBar button {
+  margin-left: 10px; background: #ffffff33; border: none; color: white;
+  padding: 6px 10px; border-radius: 6px; cursor: pointer;
+}
+main { max-width: 720px; margin: 24px auto; padding: 0 16px; }
+.card {
+  background: white; border-radius: 10px; padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin-bottom: 20px;
+}
+.hidden { display: none !important; }
+.tabs { display: flex; margin-bottom: 16px; }
+.tab {
+  flex: 1; padding: 10px; border: none; background: #eee; cursor: pointer;
+  font-weight: bold; color: #555;
+}
+.tab.active { background: #1b6b3c; color: white; }
+.form { display: flex; flex-direction: column; gap: 10px; }
+.form input, .form select, .form button {
+  padding: 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 14px;
+}
+.form button[type="submit"], #useLocationBtn, #useLocationBtnDonation {
+  background: #1b6b3c; color: white; border: none; cursor: pointer; font-weight: bold;
+}
+.form button[type="submit"]:hover { background: #145030; }
+.list { display: flex; flex-direction: column; gap: 12px; margin-top: 12px; }
+.item {
+  border: 1px solid #e0e0e0; border-radius: 8px; padding: 12px; font-size: 14px;
+}
+.item .status {
+  display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 12px;
+  font-weight: bold; color: white; margin-left: 6px;
+}
+.status.pending { background: #999; }
+.status.matched { background: #d38b00; }
+.status.assigned { background: #1976d2; }
+.status.picked_up { background: #7b1fa2; }
+.status.delivered { background: #2e7d32; }
+.status.cancelled { background: #b71c1c; }
+.item button {
+  margin-top: 8px; padding: 6px 12px; border: none; border-radius: 6px;
+  background: #1b6b3c; color: white; cursor: pointer;
+}
+.notice { background: #fff3cd; padding: 10px; border-radius: 6px; font-size: 14px; margin-bottom: 10px; }
+#locationStatus, #donationLocationStatus { font-size: 12px; color: #555; }
+
+/* ---------- Landing page ---------- */
+.hero { max-width: 900px; margin: 24px auto 0; padding: 0 16px; text-align: center; }
+.hero-img { width: 100%; max-height: 320px; object-fit: cover; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+.hero-text { margin: 20px 0; }
+.hero-text h2 { font-size: 26px; color: #1b6b3c; margin-bottom: 8px; }
+.hero-text p { color: #444; font-size: 15px; max-width: 600px; margin: 0 auto; }
+.cta-btn {
+  margin-top: 16px; background: #1b6b3c; color: white; border: none;
+  padding: 12px 26px; border-radius: 24px; font-size: 15px; font-weight: bold; cursor: pointer;
+}
+.cta-btn:hover { background: #145030; }
+.hero-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+.hero-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); text-align: left; }
+.hero-card img { width: 100%; height: 120px; object-fit: cover; display: block; }
+.hero-card h3 { font-size: 15px; margin: 10px 12px 4px; color: #1b6b3c; }
+.hero-card p { font-size: 13px; color: #555; margin: 0 12px 12px; }
+
+.section-title { text-align: center; color: #1b6b3c; font-size: 22px; margin-bottom: 16px; }
+.steps-section { max-width: 900px; margin: 40px auto; padding: 0 16px; }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.step-box { background: white; border-radius: 10px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.step-num {
+  width: 30px; height: 30px; border-radius: 50%; background: #ffb703; color: #1b2d1c;
+  font-weight: bold; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px;
+}
+.step-box h4 { margin: 4px 0; color: #1b6b3c; }
+.step-box p { font-size: 13px; color: #555; margin: 0; }
+
+.about-section { max-width: 700px; margin: 20px auto 40px; padding: 0 16px; text-align: center; color: #444; font-size: 14px; }
+.site-footer { text-align: center; padding: 20px; color: #888; font-size: 13px; }
+.back-link {
+  background: none; border: none; color: #1b6b3c; cursor: pointer; font-size: 13px;
+  padding: 0 0 12px; text-align: left; display: block;
+}
+
+@media (max-width: 700px) {
+  .hero-cards, .steps-grid { grid-template-columns: 1fr; }
+}
+/* ---------- Public pages (Impact + Partners) ---------- */
+.page-section { max-width: 900px; margin: 30px auto; padding: 0 16px; }
+
+.impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.impact-tile {
+  border-radius: 14px; padding: 22px 10px; text-align: center; color: white;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+.impact-num { font-size: 30px; font-weight: bold; margin-bottom: 4px; }
+.tile-green { background: linear-gradient(135deg, #2e7d32, #66bb6a); }
+.tile-orange { background: linear-gradient(135deg, #ef6c00, #ffb74d); }
+.tile-blue { background: linear-gradient(135deg, #1565c0, #64b5f6); }
+.tile-purple { background: linear-gradient(135deg, #6a1b9a, #ba68c8); }
+.tile-teal { background: linear-gradient(135deg, #00796b, #4db6ac); }
+.tile-pink { background: linear-gradient(135deg, #ad1457, #f06292); }
+.fine-print { text-align: center; font-size: 12px; color: #888; margin-top: 14px; }
+
+.partners-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+.partner-card {
+  background: white; border-radius: 12px; padding: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  display: flex; justify-content: space-between; align-items: center;
+}
+.partner-info h4 { margin: 0 0 4px; color: #1b6b3c; }
+.partner-info p { margin: 0; font-size: 12px; color: #777; }
+.badge {
+  padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: bold; color: white;
+  white-space: nowrap;
+}
+.badge-platinum { background: linear-gradient(135deg, #78909c, #cfd8dc); color: #263238; }
+.badge-gold { background: linear-gradient(135deg, #f9a825, #ffd54f); color: #4e342e; }
+.badge-silver { background: linear-gradient(135deg, #b0bec5, #eceff1); color: #37474f; }
+.badge-bronze { background: linear-gradient(135deg, #a1887f, #d7ccc8); color: #3e2723; }
+
+/* ---------- Rating buttons on NGO dashboard ---------- */
+.rate-btn {
+  margin: 8px 6px 0 0; padding: 5px 10px; border-radius: 6px; border: 1px solid #1b6b3c;
+  background: white; color: #1b6b3c; font-size: 12px; cursor: pointer;
+}
+
+/* ---------- Generic modal (ratings + checklist) ---------- */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center; z-index: 999;
+}
+.modal-box {
+  background: white; border-radius: 12px; padding: 24px; max-width: 340px; width: 90%;
+  text-align: center;
+}
+.modal-box h3 { margin-top: 0; color: #1b6b3c; }
+.star-row { display: flex; justify-content: center; gap: 6px; margin: 14px 0; font-size: 30px; }
+.star-row span { cursor: pointer; color: #ccc; }
+.star-row span.selected { color: #ffb703; }
+.modal-actions { margin-top: 16px; display: flex; gap: 8px; justify-content: center; }
+.modal-actions button {
+  padding: 8px 16px; border-radius: 6px; border: none; cursor: pointer; font-size: 13px;
+}
+.modal-actions .confirm-btn { background: #1b6b3c; color: white; }
+.modal-actions .cancel-btn { background: #eee; color: #444; }
+.checklist-item { display: flex; align-items: center; gap: 8px; text-align: left; margin: 10px 0; font-size: 14px; }

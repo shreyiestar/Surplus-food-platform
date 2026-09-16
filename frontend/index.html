@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title> SharePlate - Surplus Food Redistribution Cooperative</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <svg class="logo" width="46" height="46" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="48" fill="#1b6b3c"/>
+        <circle cx="50" cy="38" r="11" fill="#ffb703"/>
+        <path d="M18 66 Q50 30 82 66" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <circle cx="18" cy="66" r="6" fill="#ffb703"/>
+        <circle cx="82" cy="66" r="6" fill="#ffb703"/>
+        <path d="M33 78 Q50 88 67 78" stroke="#ffffff" stroke-width="6" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <h1>SharePlate - Surplus Food Redistribution Cooperative <span>Cooperative Food Logistics</span></h1>
+      </div>
+    </div>
+        <nav id="topNav">
+      <button id="navHome" class="navlink">Home</button>
+      <button id="navImpact" class="navlink">Impact</button>
+      <button id="navPartners" class="navlink">Partners</button>
+      <button id="navAbout" class="navlink">About</button>
+      <button id="navGetStarted" class="navlink primary">Get Started</button>
+    </nav>
+    <div id="userBar"></div>
+  </header>
+  
+
+  <main id="app">
+    <!-- Landing page -->
+    <section id="landingScreen">
+      <div class="hero">
+        <img src="C:\Users\Shreyanshi\Downloads\fooddonation2.png" alt="Surplus food redistribution" class="hero-img" />
+        <div class="hero-text">
+          <h2>No Plate Left Empty, No Worker Left Unpaid</h2>
+          <p>We connect restaurants, hostels, college canteens, households and weddings with
+             verified NGOs — delivered by <strong>paid cooperative workers</strong>, not volunteers.</p>
+          <button id="heroGetStartedBtn" class="cta-btn">Get Started →</button>
+        </div>
+        <div class="hero-cards">
+          <div class="hero-card">
+            <img src="C:\Users\Shreyanshi\OneDrive\Documents\pic4.jpeg" alt="Donor" />
+            <h3>🍲 Donors</h3>
+            <p>Restaurants, hostels, canteens, households, weddings post surplus food in seconds.</p>
+          </div>
+          <div class="hero-card">
+           <img src="C:\Users\Shreyanshi\OneDrive\Documents\pic5.jpeg"alt="NGO" />
+            <h3>🤝 NGOs</h3>
+            <p>Verified organizations get matched to nearby donations automatically.</p>
+          </div>
+          <div class="hero-card">
+            <img src="C:\Users\Shreyanshi\OneDrive\Documents\pic6.jpeg" alt="Worker" />
+            <h3>🚴 Cooperative Workers</h3>
+            <p>Earn a fair, transparent fare for every pickup-and-delivery job.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="steps-section">
+        <h2 class="section-title">How It Works</h2>
+        <div class="steps-grid">
+          <div class="step-box"><div class="step-num">1</div><h4>Post</h4><p>A donor lists surplus food with pickup location and expiry time.</p></div>
+          <div class="step-box"><div class="step-num">2</div><h4>Match</h4><p>The platform auto-matches the nearest verified NGO and cooperative worker.</p></div>
+          <div class="step-box"><div class="step-num">3</div><h4>Deliver</h4><p>The worker picks up and delivers the food, earning a fair fare.</p></div>
+          <div class="step-box"><div class="step-num">4</div><h4>Impact</h4><p>Food is saved, an NGO is fed, and a worker is paid — all in one trip.</p></div>
+        </div>
+      </div>
+
+      <div id="aboutSection" class="about-section">
+        <h2 class="section-title">About SharePlate</h2>
+        <p>Built for <strong>Smart India Hackathon — Problem Statement 26089</strong>.
+           Instead of another food-donation app, SharePlate is a community service marketplace
+           powered by cooperative workers — generating fair local employment while solving
+           local food waste, one pickup at a time.</p>
+      </div>
+
+      <footer class="site-footer">Built for SIH PS 26089 · SharePlate</footer>
+    </section>
+
+    <!-- Auth screen -->
+    <section id="authScreen" class="card hidden">
+      <button id="backToHomeBtn" class="back-link">← Back to Home</button>
+      <div class="tabs">
+        <button id="tabLogin" class="tab active">Login</button>
+        <button id="tabRegister" class="tab">Register</button>
+      </div>
+
+      <form id="loginForm" class="form">
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+
+      <form id="registerForm" class="form hidden">
+        <input type="text" id="regName" placeholder="Full name / Organization name" required />
+        <input type="email" id="regEmail" placeholder="Email" required />
+        <input type="password" id="regPassword" placeholder="Password" required />
+        <select id="regRole" required>
+          <option value="">I am a...</option>
+          <option value="donor">Food Donor (restaurant/hostel/canteen/household/wedding)</option>
+          <option value="ngo">NGO / Organization</option>
+          <option value="worker">Cooperative Delivery Worker</option>
+        </select>
+        <input type="text" id="regPhone" placeholder="Phone" />
+        <input type="text" id="regAddress" placeholder="Address" required />
+        <div id="ngoOnlyField" class="hidden">
+          <input type="number" id="regCapacity" placeholder="Capacity (kg/day you can receive)" />
+        </div>
+        <button type="button" id="useLocationBtn">📍 Use my current location</button>
+        <span id="locationStatus"></span>
+        <input type="hidden" id="regLat" />
+        <input type="hidden" id="regLng" />
+        <button type="submit">Register</button>
+      </form>
+    </section>
+
+    <!-- Donor dashboard -->
+    <section id="donorScreen" class="card hidden">
+      <h2>Post Surplus Food</h2>
+      <form id="donationForm" class="form">
+        <select id="donorType">
+          <option value="restaurant">Restaurant</option>
+          <option value="hostel">Hostel</option>
+          <option value="college_canteen">College Canteen</option>
+          <option value="household">Household</option>
+          <option value="wedding_event">Wedding / Event</option>
+          <option value="other">Other</option>
+        </select>
+        <input type="text" id="foodType" placeholder="Food type (e.g. Rice & Curry)" required />
+        <input type="text" id="foodDesc" placeholder="Description (optional)" />
+        <input type="number" id="quantity" placeholder="Quantity" required />
+        <select id="unit">
+          <option value="kg">kg</option>
+          <option value="plates">plates</option>
+          <option value="liters">liters</option>
+        </select>
+        <input type="text" id="pickupAddress" placeholder="Pickup address" required />
+        <button type="button" id="useLocationBtnDonation">📍 Use current location for pickup</button>
+        <span id="donationLocationStatus"></span>
+        <input type="hidden" id="donationLat" />
+        <input type="hidden" id="donationLng" />
+        <label>Food must be picked up before:</label>
+        <input type="datetime-local" id="expiryTime" required />
+        <button type="submit">Post Donation</button>
+      </form>
+      <div id="donationResult"></div>
+      <h3>My Donations</h3>
+      <div id="donorList" class="list"></div>
+    </section>
+
+    <!-- NGO dashboard -->
+    <section id="ngoScreen" class="card hidden">
+      <h2>Incoming Donations Matched To Us</h2>
+      <p id="ngoVerifiedNotice" class="notice hidden">
+        Your NGO account is pending admin verification. You'll start receiving matches once verified.
+      </p>
+      <div id="ngoList" class="list"></div>
+    </section>
+
+    <!-- Worker dashboard -->
+    <section id="workerScreen" class="card hidden">
+      <h2>My Delivery Jobs</h2>
+      <div id="workerEarnings" class="notice"></div>
+      <div id="workerList" class="list"></div>
+    </section>
+  
+    <!-- Impact dashboard (public) -->
+    <section id="impactScreen" class="page-section hidden">
+      <h2 class="section-title">Our Impact So Far</h2>
+      <div class="impact-grid">
+        <div class="impact-tile tile-green"><div class="impact-num" id="impactKg">–</div><div>kg Food Saved</div></div>
+        <div class="impact-tile tile-orange"><div class="impact-num" id="impactMeals">–</div><div>Estimated Meals</div></div>
+        <div class="impact-tile tile-blue"><div class="impact-num" id="impactDeliveries">–</div><div>Deliveries Completed</div></div>
+        <div class="impact-tile tile-purple"><div class="impact-num" id="impactWages">–</div><div>₹ Paid to Workers</div></div>
+        <div class="impact-tile tile-teal"><div class="impact-num" id="impactNgos">–</div><div>NGOs Onboard</div></div>
+        <div class="impact-tile tile-pink"><div class="impact-num" id="impactWorkers">–</div><div>Cooperative Workers</div></div>
+      </div>
+      <p class="fine-print">Meal count is an estimate (~2.5 meals per kg of cooked food).</p>
+    </section>
+
+    <!-- Partner recognition (public) -->
+    <section id="partnersScreen" class="page-section hidden">
+      <h2 class="section-title">Our Donation Partners</h2>
+      <div id="partnersList" class="partners-grid"></div>
+    </section>
+  </main>
+
+  <!-- Generic popup used for ratings and the food-safety checklist -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal-box" id="modalBox"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
