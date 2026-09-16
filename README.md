@@ -1,4 +1,4 @@
-# AnnaSetu — Cooperative-Powered Community Logistics Platform for Surplus Food Redistribution
+# Shareplate — Cooperative-Powered Community Logistics Platform for Surplus Food Redistribution
 ### SIH Problem Statement 26089
 
 A marketplace connecting **surplus food donors** (restaurants, hostels, college canteens,
